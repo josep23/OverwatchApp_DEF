@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menu">
+
+    <fragment
+        android:id="@+id/menu"
+        android:name="com.example.overwatch_def.Menu"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menu_to_informacion"
+            app:destination="@id/informacion" />
+        <action
+            android:id="@+id/action_menu_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/informacion"
+        android:name="com.example.overwatch_def.Informacion"
+        android:label="fragment_informacion"
+        tools:layout="@layout/fragment_informacion" />
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.overwatch_def.login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_fragmentRegistrarse"
+            app:destination="@id/Registrarse" />
+        <action
+            android:id="@+id/action_login_to_Registrarse"
+            app:destination="@id/Registrarse" />
+    </fragment>
+
+    <action
+        android:id="@+id/HometoInformacion"
+        app:destination="@id/informacion"/>
+    <action
+        android:id="@+id/HometoLogin"
+        app:destination="@id/HometoLogin"/>
+    <fragment
+        android:id="@+id/Registrarse"
+        android:name="com.example.overwatch_def.FragmentRegistrarse"
+        android:label="fragment_registrarse"
+        tools:layout="@layout/fragment_registrarse"/>
+
+</navigation>
