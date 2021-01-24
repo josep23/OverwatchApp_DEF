@@ -12,22 +12,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.overwatch_def.databinding.FragmentInformacionBinding;
-import com.example.overwatch_def.databinding.FragmentRegistrarseBinding;
+import com.example.overwatch_def.databinding.FragmentBuscarGrupoBinding;
+import com.example.overwatch_def.databinding.FragmentLoginBinding;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the  factory method to
  * create an instance of this fragment.
  */
-public class FragmentRegistrarse extends Fragment {
+public class BuscarGrupo extends Fragment {
     NavController navController;
-    private FragmentRegistrarseBinding binding;
+    private FragmentBuscarGrupoBinding binding;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return (binding = FragmentRegistrarseBinding.inflate(inflater,container,false)).getRoot();
+        return (binding = FragmentBuscarGrupoBinding.inflate(inflater,container,false)).getRoot();
     }
 
     @Override
@@ -35,16 +35,10 @@ public class FragmentRegistrarse extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
 
-        binding.buttonBack2.setOnClickListener(new View.OnClickListener() {
+        binding.buttonBackBuscarJugadores.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_Registrarse_to_login);
-            }
-        });
-        binding.buttonAceptar2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_Registrarse_to_buscarGrupo);
+                navController.navigate(R.id.action_buscarGrupo_to_login);
             }
         });
     }
